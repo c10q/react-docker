@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  sample:
+    container_name: frontend_dev
+    build:
+      context: ..
+      dockerfile: Dockerfile.dev
+    volumes:
+      - "/node_modules"
+      - "/:/app"
+    ports:
+      - "3000:3000"
+    restart: always
